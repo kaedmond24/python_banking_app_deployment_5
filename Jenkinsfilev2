@@ -4,14 +4,14 @@ pipeline {
     stage ('Clean') {
       steps {
         sh '''#!/bin/bash
-        echo "command to run the pkill.sh"
+        ssh ubuntu@10.0.2.217 "curl -O https://raw.githubusercontent.com/kaedmond24/python_banking_app_deployment_5/main/pkill.sh && chmod 744 pkill.sh && ./pkill.sh"
         '''
      }
    }
  stage ('Deploy') {
   steps {
      sh '''#!/bin/bash
-     echo "command to run the setup2.sh"
+     ssh ubuntu@10.0.2.217 "curl -O https://raw.githubusercontent.com/kaedmond24/python_banking_app_deployment_5/main/setup.sh && chmod 744 setup.sh && ./setup.sh"
     '''
       }
     }
