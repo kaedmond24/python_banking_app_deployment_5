@@ -144,4 +144,10 @@ During my first iterations of running the deployment I noticed that the jenkins_
 
 # Optimization
 
-- TBD
+1. How did you decide to run Jenkinsfilev2?
+
+   - In order to run Jenkinsfilev2 I reconfigured the pipeline build configuration’s script path to use the specified filename. A pipeline build was run once the change was made to apply the new instructions. <br>
+
+2. Should you place both instances in the public subnet? Or should you place them in a private subnet? Explain why?
+
+   - Ideally, the web application should be in the public subnet since it is running an internet facing service. If the web service and application were decoupled and running on different servers, then the application server could be moved to the private subnet. The Jenkins server could be placed in the private subnet. With Jenkins being the host that controls configuration and deployment placement in the private subnet would add an additional layer of security. This would also prompt for specific configuration to be put in place for access to the Jenkins server.<br>
